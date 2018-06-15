@@ -1,0 +1,12 @@
+<p *ngIf="us">
+  Username - {{us.username | uppercase}}
+</p>
+<div *ngIf="us">
+  Name: <input [(ngModel)]="us.username" placeholder="name">
+  Password: <input [(ngModel)]="us.password" placeholder="name">
+  Contact no: <input [(ngModel)]="us.phone_number" placeholder="name">
+<br>
+  <button (click)="save()">Update</button>
+<button (click)="goBack()">Back</button>
+</div>
+

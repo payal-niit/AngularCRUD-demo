@@ -1,0 +1,49 @@
+<p> 
+{{u.username}}
+</p>
+  <div *ngIf="selectedUser">
+    <input [(ngModel)]="selectedUser.username" placeholder="name">
+  </div>  
+  
+  <ul>
+    <li>{{u.username | uppercase}}</li>
+    <li>{{u.password}}</li>
+    <li>{{u.phone_number}}</li>
+    <li>{{u.email_id}}</li>    
+  </ul>
+
+  <p>Display a list - using loop</p>
+  <table border="1px black">
+    <tr>
+      <th>User name</th>
+      <th>Password</th>
+      <th>phone_number</th>
+      <th>Email_id</th>
+      
+    </tr>
+    <tr *ngFor="let u of users" [class.selected]="u===selectedUser" (click)="onSelect(u)">
+      <td><a routerLink="/user-detail/{{u.userId}}">{{u.username}}</a></td>
+      <td>{{u.password}}</td>
+      <td>{{u.phone_number}}</td>
+      <td>{{u.email_id}}</td>
+      <td><button type="submit" (click)="delete(u)">Delete</button></td>
+    </tr>
+  </table>
+  <div><span>id: </span>{{selectedUser.username}}</div>
+<h3>Add a new user</h3>
+<form>
+<label for="username"><b>username</b></label>
+      <input  [(ngModel)]="u.username" type="text" placeholder="Enter username" name="username" required />
+
+      <label for="password"><b>username</b></label>
+      <input  [(ngModel)]="u.password" type="text" placeholder="Enter password" name="password" required />
+
+      <label for="phone_number"><b>phone_number</b></label>
+      <input  [(ngModel)]="u.phone_number" type="text" placeholder="Enter phone_number" name="phone_number" required />
+
+      <label for="email_id"><b>email_id</b></label>
+      <input  [(ngModel)]="u.email_id" type="text" placeholder="Enter email_id" name="email_id" required />
+
+      <button type="submit" class="signupbtn" (click)="add()">Sign Up</button>
+
+      </form>

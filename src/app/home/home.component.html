@@ -1,0 +1,7 @@
+<div class="container">
+<div class="row">
+  <div class="col userBackground" *ngFor="let u of users"><a routerLink="/user-detail/{{u.userId}}">{{u.username}}</a></div>
+</div>
+</div>
+Welcome: {{LoggedinUser.username}}
+<app-user-search></app-user-search>

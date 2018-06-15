@@ -1,0 +1,19 @@
+<div class="wrap-input100 validate-input" ng-minlength="6" ng-maxlength="12" data-validate = "Valid email is: a@b.c">
+  <input class="input100" type="text" [(ngModel)]="u.email_id" name="email">
+  <span class="focus-input100" data-placeholder="Email"></span>
+</div>
+
+<div class="wrap-input100 validate-input" data-validate="Enter password">
+  <span class="btn-show-pass">
+    <i class="zmdi zmdi-eye"></i>
+  </span>
+  <input class="input100"  [(ngModel)]="u.password"  type="password" name="pass">
+  <span class="focus-input100" data-placeholder="Password"></span>
+</div>
+
+<div class="container-login100-form-btn">
+  <div class="wrap-login100-form-btn">
+    <div class="login100-form-bgbtn"></div>
+    <button  (click)="login()" class="login100-form-btn">
+      Login
+    </button>
